@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.adopcion',
-    'apps.mascota',
+    'apps.business',
+    'apps.oportunidad',
     'apps.usuario',
 ]
 
@@ -144,7 +144,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
-LOGIN_REDIRECT_URL = reverse_lazy('adopcion:solicitud_listar'),
+LOGIN_REDIRECT_URL = reverse_lazy('business:business_listar'),
 LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
 EMAIL_USE_TLS = True

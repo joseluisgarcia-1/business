@@ -21,10 +21,10 @@ from django.urls import reverse_lazy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('mascota/',include(('apps.mascota.urls','mascota'), namespace='mascota')),
-    path('adopcion/',include(('apps.adopcion.urls','adopcion'), namespace='solicitud')),
+    path('oportunidad/',include(('apps.oportunidad.urls','oportunidad'), namespace='oportunidad')),
+    path('business/',include(('apps.business.urls','business'), namespace='business')),
     path('usuario/',include(('apps.usuario.urls','usuario'), namespace='usuario')),
-    path('accounts/login/', LoginView.as_view(template_name='index.html',success_url=reverse_lazy('mascota_listar')), name='login'),
+    path('accounts/login/', LoginView.as_view(template_name='index.html',success_url=reverse_lazy('oportunidad_listar')), name='login'),
     path('logout/', logout_then_login, name='logout'),
     path('reset/password_reset', PasswordResetView.as_view(template_name='registration/password_reset_form.html'),
          {'email_template_name':'registration/password_reset_email.html'}, name="password_reset"),

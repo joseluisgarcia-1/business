@@ -1,0 +1,35 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td># Business</td>
+            <td>Adoptante</td>
+            <td># Oportunidades</td>
+            <td>Razones</td>
+            <td>Acciones</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% if object_list %}
+        {% for business in object_list %}
+        <tr>
+            <td>{{ business.id }}</td>
+            <td>{{ business.persona.nombre }} {{ business.persona.apellidos }}</td>
+            <td>{{ business.numero_oportunidad }}</td>
+            <td>{{ business.razones }}</td>
+            <td>
+                <a class="btn btn-primary" href="{% url 'business:business_editar' business.id %}">Editar</a>
+                <a class="btn btn-danger" href="{% url 'business:business_eliminar' business.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        {% else %}
+        <h1>No hay registros de business</h1>
+        {% endif %}
+    </tbody>
+</table>
+{% endblock %}
