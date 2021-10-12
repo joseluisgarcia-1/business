@@ -6,28 +6,47 @@ class PersonaForm(forms.ModelForm):
     class Meta:
         model = Persona
         fields = [
-            'nombre',
-            'apellidos',
-            'edad',
+            'creador',
+            'nit',
+            'nombre_empresa',
+            'nombre_comercial',
+            'direccion',
             'telefono',
-            'email',
-            'domicilio',
+            'correo',
+            'sitio_web',
+            'pais',
+            'estado',
+            'ciudad',
+            'usuarios_empresa',
         ]
         labels = {
-            'nombre': "Nombre",
-            'apellidos': "Apellidos",
-            'edad': "Edad",
+            'creador': "Usuario creador",
+            'nit': "Nit",
+            'nombre_empresa': "Nombre de la empresa",
+            'nombre_comercial': 'Nombre comercial de la empresa',
+            'direccion': "Dirección",
             'telefono': 'Telefono',
-            'email': "Correo electrónico",
-            'domicilio': 'Domicilio',            
+            'correo': 'Correo electrónico',
+            'sitio_web': 'Sitio web',
+            'pais': 'País',
+            'estado': 'Departamento',
+            'ciudad':'Ciudad',
+            'usuarios_empresa': 'Usuarios de la empresa',
+
         }
         widgets = {
-            'nombre': forms.TextInput(attrs={'class':'form-control'}),
-            'apellidos': forms.TextInput(attrs={'class':'form-control'}),
-            'edad': forms.TextInput(attrs={'class':'form-control'}),
+            'creador': forms.TextInput(attrs={'class':'form-control'}),
+            'nit': forms.TextInput(attrs={'class':'form-control'}),
+            'nombre_empresa': forms.TextInput(attrs={'class':'form-control'}),
+            'nombre_comercial': forms.TextInput(attrs={'class':'form-control'}),
+            'direccion': forms.TextInput(attrs={'class':'form-control'}),
             'telefono': forms.TextInput(attrs={'class':'form-control'}),
-            'email': forms.TextInput(attrs={'class':'form-control'}),
-            'domicilio': forms.Textarea(attrs={'class':'form-control'}),
+            'correo': forms.EmailInput(attrs={'class':'form-control'}),
+            'sitio_web': forms.URLInput(attrs={'class':'form-control'}),
+            'pais': forms.TextInput(attrs={'class':'form-control'}),
+            'estado': forms.TextInput(attrs={'class':'form-control'}),
+            'ciudad': forms.TextInput(attrs={'class':'form-control'}),
+            'usuarios_empresa': forms.TextInput(attrs={'class':'form-control'}),
         }
 
 class BusinessForm(forms.ModelForm):
@@ -35,13 +54,13 @@ class BusinessForm(forms.ModelForm):
         model = Business
         fields = [
             'numero_oportunidad', 
-            'razones'
+            'contactos'
         ]
         labels = {
-            'numero_oportunidad': 'Número de oportunidad', 
-            'razones': 'Razones para adoptar'
+            'numero_oportunidad': 'Correo electrónico', 
+            'contactos': 'Contactos de la empresa'
         }
         widgets = {
             'numero_oportunidad': forms.TextInput(attrs={'class':'form-control'}),
-            'razones': forms.Textarea(attrs={'class':'form-control'}),
+            'contactos': forms.Textarea(attrs={'class':'form-control'}),
         }

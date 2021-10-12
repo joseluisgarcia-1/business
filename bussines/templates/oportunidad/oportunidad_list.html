@@ -5,13 +5,11 @@
 <table class="table table-bordered">
 	<thead>
 		<tr>
-			<td>#</td>
-			<td>Nombre</td>
-			<td>Sexo</td>
-			<td>Edad</td>
-			<td>Fecha de Rescate</td>
-			<td>Vacunas</td>
-			<td>Adoptante</td>
+			<td>Empresa cliente</td>
+			<td>Contacto empresa</td>
+			<td>Nombre oportunidad de negocio</td>
+			<td>Monto de la oportunidad</td>
+			<td>Estado de la oportunidad</td>
 			<td>Acciones</td>
 		</tr>
 		
@@ -20,23 +18,14 @@
 		{% if object_list %}
 		{% for oportunidad in object_list %}
 		<tr>
-			<td>{{ oportunidad.id }}</td>
-			<td>{{ oportunidad.nombre }}</td>
-			<td>{{ oportunidad.sexo }}</td>
-			<td>{{ oportunidad.edad_aproximada }}</td>
-			<td>{{ oportunidad.fecha_rescate }}</td>
+			<td>{{ oportunidad.empresa_cliente }}</td>
+			<td>{{ oportunidad.contacto_empresa }}</td>
+			<td>{{ oportunidad.nombre_oportunidad }}</td>
+			<td>{{ oportunidad.monto_oportunidad }}</td>
+			<td>{{ oportunidad.estado }}</td>
 			<td>
-			<ul>{% for vacuna in oportunidad.vacuna.all %}
-				<li>
-					{{vacuna.nombre}}
-				</li>
-				{% endfor %}
-			</ul>
-    		</td>
-			<td>{{ oportunidad.persona.nombre }} {{ oportunidad.persona.apellidos }}</td>
-			<td>
-				<a class="btn btn-primary" href="{% url 'oportunidad:oportunidad_editar' pk=oportunidad %}">Editar</a>
-				<a class="btn btn-danger" href="{% url 'oportunidad:oportunidad_eliminar' pk=oportunidad %}">Eliminar</a>
+				<a class="btn btn-primary" href="{% url 'oportunidad:oportunidad_editar' oportunidad.id %}">Editar</a>
+				<a class="btn btn-danger" href="{% url 'oportunidad:oportunidad_eliminar' oportunidad.id %}">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}

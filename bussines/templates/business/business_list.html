@@ -5,10 +5,18 @@
 <table class="table table-bordered">
     <thead>
         <tr>
-            <td># Business</td>
-            <td>Adoptante</td>
-            <td># Oportunidades</td>
-            <td>Razones</td>
+            <td>Usuario creador</td>
+            <td>Nit</td>
+            <td>Nombre de la empresa</td>
+            <td>Nombre comercial de la empresa</td>
+            <td>Dirección</td>
+            <td>Teléfono</td>
+            <td>Correo electrónico</td>
+            <td>Sitio web</td>
+            <td>País</td>
+            <td>Departamento</td>
+            <td>Ciudad</td>
+            <td>Usuarios que pertenecen a la empresa</td>
             <td>Acciones</td>
         </tr>
     </thead>
@@ -16,10 +24,18 @@
         {% if object_list %}
         {% for business in object_list %}
         <tr>
-            <td>{{ business.id }}</td>
-            <td>{{ business.persona.nombre }} {{ business.persona.apellidos }}</td>
-            <td>{{ business.numero_oportunidad }}</td>
-            <td>{{ business.razones }}</td>
+            <td>{{ business.creador }}</td>
+            <td>{{ business.nit }}</td>
+            <td>{{ business.nombre_empresa }}</td>
+            <td>{{ business.nombre_comercial }}</td>
+            <td>{{ business.direccion }}</td>
+            <td>{{ business.telefono }}</td>
+            <td>{{ business.correo }}</td>
+            <td>{{ business.sitio_web }}</td>
+            <td>{{ business.pais }}</td>
+            <td>{{ business.estado }}</td>
+            <td>{{ business.ciudad }}</td>
+            <td>{{ business.usuarios_empresa }}</td>
             <td>
                 <a class="btn btn-primary" href="{% url 'business:business_editar' business.id %}">Editar</a>
                 <a class="btn btn-danger" href="{% url 'business:business_eliminar' business.id %}">Eliminar</a>

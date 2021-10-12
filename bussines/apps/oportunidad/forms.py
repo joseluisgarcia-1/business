@@ -9,26 +9,29 @@ class OportunidadForm(forms.ModelForm):
 		model = Oportunidad
 
 		fields = [
-			'nombre',
-			'sexo',
-			'edad_aproximada',
-			'fecha_rescate',
+			#'identificador',
+			'empresa_cliente',
+			'contacto_empresa',
+			'nombre_oportunidad',
+			'monto_oportunidad',
 			'persona',
-			'vacuna',
+			'estado',
 		]
 		labels = {
-			'nombre': 'Nombre',
-			'sexo': 'Sexo',
-			'edad_aproximada': 'Edad aproximada',
-			'fecha_rescate':'Fecha de rescate',
-			'persona': 'Adoptante',
-			'vacuna': 'Vacunas',
+			#'identificador': 'Identificador',
+			'empresa_cliente': 'Empresa cliente',
+			'contacto_empresa': 'Contacto de la empresa',
+			'nombre_oportunidad': 'Nombre oportunidad',
+			'monto_oportunidad': 'Monto oportunidad',
+			'persona': 'Persona',
+			'estado': 'Estado',
 		}
 		widgets = {
-			'nombre': forms.TextInput(attrs={'class':'form-control'}),
-			'sexo': forms.TextInput(attrs={'class':'form-control'}),
-			'edad_aproximada': forms.TextInput(attrs={'class':'form-control'}),
-			'fecha_rescate': forms.TextInput(attrs={'class':'form-control'}),
+			#'identificador': forms.TextInput(attrs={'class':'form-control'}),
+			'empresa_cliente': forms.TextInput(attrs={'class':'form-control'}),
+			'contacto_empresa': forms.TextInput(attrs={'class':'form-control'}),
+			'nombre_oportunidad': forms.TextInput(attrs={'class':'form-control'}),
+			'monto_oportunidad': forms.TextInput(attrs={'class':'form-control'}),
 			'persona': forms.Select(attrs={'class':'form-control'}),
-			'vacuna': forms.CheckboxSelectMultiple(),
+			'estado': forms.Select(attrs={'class':'form-control'}),
 		}
