@@ -5,7 +5,7 @@ class Persona(models.Model):
     creador = models.CharField(max_length = 100)
     nit = models.CharField(max_length = 100)
     nombre_empresa = models.CharField(max_length = 100)
-    nombre_comercial = models.CharField(max_length = 12)
+    nombre_comercial = models.CharField(max_length = 100)
     direccion = models.CharField(max_length = 100)
     telefono = models.CharField(max_length = 100)
     correo = models.EmailField()
